@@ -19,24 +19,46 @@
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
-        <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
+        <div class="header-content">
+          <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
+          <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
+        </div>
+        <button
+          id="darkModeToggle"
+          class="dark-mode-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </header>
 
-      <!-- Category Filter -->
-      <div class="search-section">
-        <select id="categoryFilter">
-          <option value="" disabled selected>Choose a Category</option>
-          <option value="cleanser">Cleansers</option>
-          <option value="moisturizer">Moisturizers & Treatments</option>
-          <option value="haircare">Haircare</option>
-          <option value="makeup">Makeup</option>
-          <option value="hair color">Hair Color</option>
-          <option value="hair styling">Hair Styling</option>
-          <option value="men's grooming">Men's Grooming</option>
-          <option value="suncare">Suncare</option>
-          <option value="fragrance">Fragrance</option>
-        </select>
+      <!-- Search and Filter Section -->
+      <div class="filter-section">
+        <div class="search-input-container">
+          <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products by name or keyword..."
+            autocomplete="off"
+          />
+          <i class="fa-solid fa-search search-icon"></i>
+        </div>
+
+        <div class="category-filter-container">
+          <select id="categoryFilter">
+            <option value="all" selected>All Categories</option>
+            <option value="cleanser">Cleansers</option>
+            <option value="moisturizer">Moisturizers</option>
+            <option value="skincare">Skincare & Serums</option>
+            <option value="haircare">Haircare</option>
+            <option value="makeup">Makeup</option>
+            <option value="hair color">Hair Color</option>
+            <option value="hair styling">Hair Styling</option>
+            <option value="men's grooming">Men's Grooming</option>
+            <option value="suncare">Suncare</option>
+            <option value="fragrance">Fragrance</option>
+          </select>
+        </div>
       </div>
 
       <!-- Products Grid -->
@@ -84,6 +106,9 @@
         </nav>
       </footer>
     </div>
+
+    <!-- Anime.js for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
     <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
     <script src="secrets.js"></script>
